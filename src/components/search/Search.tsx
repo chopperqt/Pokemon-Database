@@ -18,36 +18,8 @@ const Search = () => {
                 placeholder="Give me pokemon name:)"
                 data-testid="search-input"
             />
-            {searchValue.length > 4 && (
-                <div data-testid="search-popup" className={styles.popup}>
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
-                    
+            {searchValue.length >= 0 && (
+                <div data-testid="search-popup" className={styles.popup}>       
                 </div>
             )}
         </div>
