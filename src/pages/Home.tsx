@@ -9,12 +9,18 @@ import { IStore } from 'src/services/rootStore'
 
 const Home = () => {
     const pokemonList = useSelector((store: IStore) => store.pokemons.pokemonList) 
-    const [limit , setLimit] = useState<number>(3)
+    const [limit , setLimit] = useState<number>(15)
     const [offset, setOffset] = useState<number>(0) 
 
     useEffect(() => {
         fetchPokemonList(limit, offset)
     }, [])
+
+    if (!pokemonList.length) {
+        <div>
+            Loading... 
+        </div>
+    }
 
     return (
         <div>
