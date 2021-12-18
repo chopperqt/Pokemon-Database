@@ -1,4 +1,11 @@
+.App {
+    display: grid;
+    justify-content: center;
+}
+
 .container-lg {
-    min-width: 1200px;
-    max-width: 1200px;
+    display: grid;
+    row-gap: 15px;
+    min-width: 1000px;
+    max-width: 1000px;
 }

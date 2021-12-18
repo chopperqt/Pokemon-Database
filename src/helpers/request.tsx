@@ -11,16 +11,16 @@ const {
 } = notificationsMethods
 
 export async function getRequest<T>(url: string, loading: string, data?: T) {
-    store.dispatch(loadingRequest(loading, true))
+    store.dispatch(loadingRequest(loading, false))
 
     return axios.get(url)
     .then((response) => {
-        store.dispatch(loadingRequest(loading, false))
+        store.dispatch(loadingRequest(loading, true))
 
         return response
     })
     .catch((error) => {
-        store.dispatch(loadingRequest(loading, false))
+        store.dispatch(loadingRequest(loading, true))
 
         return error
     })

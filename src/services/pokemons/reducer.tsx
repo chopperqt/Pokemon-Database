@@ -1,9 +1,13 @@
 import { actions } from "./actions";
 
-const { POKEMON_LIST } = actions;
+const { 
+    POKEMON_LIST,
+    POKEMON
+ } = actions;
 
 const initialState = {
     pokemonList: [],
+    pokemons: {}
 };
 
 export const pokemonStore = (
@@ -22,6 +26,14 @@ export const pokemonStore = (
                 ...state,
                 pokemonList: payload,
             };
+        case POKEMON: 
+            return {
+                ...state,
+                pokemons: {
+                    ...state.pokemons,
+                    [payload.name]: payload.data
+                }
+            }
         default:
             return {
                 ...state
