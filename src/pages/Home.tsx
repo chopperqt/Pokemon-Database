@@ -9,7 +9,7 @@ import { IStore } from 'src/services/rootStore'
 
 const Home = () => {
     const pokemonList = useSelector((store: IStore) => store.pokemons.pokemonList) 
-    const [limit , setLimit] = useState<number>(15)
+    const [limit , setLimit] = useState<number>(20)
     const [offset, setOffset] = useState<number>(0) 
 
     useEffect(() => {

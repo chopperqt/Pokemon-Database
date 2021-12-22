@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PokemonItem from './pokemon-list-item/PokemonItem'
+import PokemonItem from './item/Item'
 
 import styles from './PokemonList.module.css'
 
