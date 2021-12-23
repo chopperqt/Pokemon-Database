@@ -6,6 +6,7 @@ import {
 
 import { Search } from "./components";
 import Home from "src/pages/Home";
+import Pokemon from 'src/pages/Pokemon'
 import logo from 'src/templates/logo.png'
 
 import "./assets/default.css";
@@ -20,6 +21,7 @@ function App() {
                 <Search />
 				<Routes>
 					<Route path="/" element={<Home />} />
+                    <Route path="/pokemon/:pokemon" element={<Pokemon />} />
 				</Routes>
                 
             </div>
