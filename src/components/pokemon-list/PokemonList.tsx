@@ -1,19 +1,26 @@
-import React from 'react'
+import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
-import PokemonItem from './item/Item'
+import PokemonItem from "./item/Item";
+import { SkeletonPokemonMore } from "src/components";
 
-import styles from './PokemonList.module.css'
+import styles from "./PokemonList.module.css";
 
 const PokemonList = ({
-    pokemonList
+    pokemonList,
 }: {
-    pokemonList: {name: string, url: string}[]
+    pokemonList: { name: string; url: string }[];
 }) => (
     <div className={styles.list}>
-        {pokemonList.map(({name, url}) => (
-            <PokemonItem name={name} url={url} />
+        {pokemonList.map(({ name, url }, index) => (
+            <PokemonItem 
+                key={index}
+                name={name} 
+                url={url} 
+            />
         ))}
+        <SkeletonPokemonMore />
     </div>
-)
+);
 
-export default PokemonList
+export default PokemonList;

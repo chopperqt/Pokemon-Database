@@ -3,7 +3,10 @@ import React from 'react'
 const Pokemon = () => {
     return (
         <div>
-            Тут будет страница с покемоном
+            <img 
+                src='/'
+                
+            />
         </div>
     )
 }

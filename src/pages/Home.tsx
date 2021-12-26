@@ -1,32 +1,54 @@
-import React, { useEffect, useState} from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import {
-    fetchPokemonList
- } from 'src/api/pokemons'
-import { PokemonList } from 'src/components'
-import { IStore } from 'src/services/rootStore'
+import { fetchPokemonList } from "src/api/pokemons";
+import { PokemonList } from "src/components";
+import { IStore } from "src/services/rootStore";
 
-const Home = () => {
-    const pokemonList = useSelector((store: IStore) => store.pokemons.pokemonList) 
-    const [limit , setLimit] = useState<number>(20)
-    const [offset, setOffset] = useState<number>(0) 
+const LIMIT_PER_PAGE = 20
+const LIMIT_MORE_PER_PAGE = 10
+
+interface IHome {
+    hasScrollBottom: boolean;
+}
+
+const Home = ({ hasScrollBottom }: IHome) => {
+    const pokemonList = useSelector(
+        (store: IStore) => store.pokemons.pokemonList
+    );
+    const loading = useSelector((store: IStore) => store.notifications.loading);
+    const [offset, setOffset] = useState<number>(0);
 
     useEffect(() => {
-        fetchPokemonList(limit, offset)
-    }, [])
+        document.documentElement.scrollTop = 0;
+
+        fetchPokemonList(LIMIT_PER_PAGE, offset);
+    }, []);
+
+    useEffect(() => {
+        if (hasScrollBottom) {
+
+            if (
+                typeof loading.fetchPokemonList === "boolean" 
+                && loading.fetchPokemonList
+            ) {
+
+                console.log('test')
+                fetchPokemonList(LIMIT_MORE_PER_PAGE, offset + 10, true)
+                setOffset(offset + LIMIT_MORE_PER_PAGE)
+            }
+        }
+    }, [hasScrollBottom]);
 
     if (!pokemonList.length) {
-        <div>
-            Loading... 
-        </div>
+        <div>Loading...</div>;
     }
 
     return (
         <div>
             <PokemonList pokemonList={pokemonList} />
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

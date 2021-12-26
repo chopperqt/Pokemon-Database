@@ -21,16 +21,10 @@ const PokemonItem = ({ name }: IPokemonItem) => {
     const img = pokemon[name]?.sprites?.other["official-artwork"]?.front_default;
 
     useEffect(() => {
-
-        console.log(name)
-        if (pokemon && !pokemon[name]) {
-            fetchPokemon(name);
-        }
+        if (pokemon && !pokemon[name]) fetchPokemon(name)
     }, []);
 
-    if (!loading.fetchPokemon) {
-        return <SkeletonPokemonItem />;
-    }
+    if (!loading.fetchPokemon) return <SkeletonPokemonItem />
 
     return (
         <div className={styles.item}>

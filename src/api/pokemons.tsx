@@ -8,13 +8,17 @@ import { methods } from 'src/services/rootStore'
 const { pokemonMethods } = methods
 const { 
     pokemonList,
+    pokemonListMore,
     pokemon,
  } = pokemonMethods
 
-async function fetchPokemonList(limit: number, offset: number) {
+async function fetchPokemonList(limit: number, offset: number, more?: boolean) {
     const response = await getRequest(`${POKEMON}?limit=${limit}&offset=${offset}`, fetchPokemonList.name)
     
     if (checkRequest(response)) {
+        if (more) {
+            return store.dispatch(pokemonListMore(response.data.results))
+        }
         store.dispatch(pokemonList(response.data.results))
     }
 }

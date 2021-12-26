@@ -2,6 +2,7 @@ import { actions } from "./actions";
 
 const { 
     POKEMON_LIST,
+    POKEMON_LIST_MORE,
     POKEMON
  } = actions;
 
@@ -26,6 +27,11 @@ export const pokemonStore = (
                 ...state,
                 pokemonList: payload,
             };
+        case POKEMON_LIST_MORE:
+            return {
+                ...state,
+                pokemonList: [...state.pokemonList, ...payload]
+            }
         case POKEMON: 
             return {
                 ...state,
