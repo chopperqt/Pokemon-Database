@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import _ from 'lodash'
 
 import { fetchPokemonList } from "src/api/pokemons";
 import { PokemonList } from "src/components";
 import { IStore } from "src/services/rootStore";
 
-const LIMIT_PER_PAGE = 20
-const LIMIT_MORE_PER_PAGE = 10
+const LIMIT = 20
+const LIMIT_PER_PAGE = 10
+const TIMER = 400
 
 interface IHome {
     hasScrollBottom: boolean;
@@ -22,7 +24,8 @@ const Home = ({ hasScrollBottom }: IHome) => {
     useEffect(() => {
         document.documentElement.scrollTop = 0;
 
-        fetchPokemonList(LIMIT_PER_PAGE, offset);
+        fetchPokemonList(LIMIT, offset);
+        setOffset(LIMIT)
     }, []);
 
     useEffect(() => {
@@ -31,11 +34,15 @@ const Home = ({ hasScrollBottom }: IHome) => {
             if (
                 typeof loading.fetchPokemonList === "boolean" 
                 && loading.fetchPokemonList
+                // && 
             ) {
-
-                console.log('test')
-                fetchPokemonList(LIMIT_MORE_PER_PAGE, offset + 10, true)
-                setOffset(offset + LIMIT_MORE_PER_PAGE)
+                const handleOffset =  offset + LIMIT_PER_PAGE
+                const callFetchPokemonList =  _.throttle(() => {
+                    fetchPokemonList(LIMIT_PER_PAGE, handleOffset, true)
+                    setOffset(offset + LIMIT_PER_PAGE)
+                }, TIMER)
+                
+                callFetchPokemonList()
             }
         }
     }, [hasScrollBottom]);

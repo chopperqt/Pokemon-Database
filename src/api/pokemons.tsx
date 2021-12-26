@@ -29,6 +29,8 @@ async function fetchPokemon(name: string) {
     if (checkRequest(response)) {
         store.dispatch(pokemon(response.data, name))
     }
+
+    return response
 }
 
 export {

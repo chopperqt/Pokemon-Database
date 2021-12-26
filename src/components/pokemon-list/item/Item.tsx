@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,  useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import { SkeletonPokemonItem } from "src/components";
 import { IStore } from "src/services/rootStore";
 import { fetchPokemon } from "src/api/pokemons";
 import { formatName } from "src/helpers/format";
+import { checkRequest } from 'src/helpers/request'
 
 import styles from "./Item.module.css";
 
@@ -15,16 +16,27 @@ interface IPokemonItem {
 }
 
 const PokemonItem = ({ name }: IPokemonItem) => {
-    const loading = useSelector((store: IStore) => store.notifications.loading);
     const pokemon = useSelector((store: IStore) => store.pokemons.pokemons);
+    const [loading, setLoading] = useState<boolean>(false)
 
     const img = pokemon[name]?.sprites?.other["official-artwork"]?.front_default;
 
+
+    const handlePokemon = async () => {
+        const response = await fetchPokemon(name)
+
+        if (checkRequest(response)) {
+            setLoading(true)
+        }
+    }
+
     useEffect(() => {
-        if (pokemon && !pokemon[name]) fetchPokemon(name)
+        if (pokemon && !pokemon[name]) {
+            handlePokemon()
+        } 
     }, []);
 
-    if (!loading.fetchPokemon) return <SkeletonPokemonItem />
+    if (!loading) return <SkeletonPokemonItem />
 
     return (
         <div className={styles.item}>
