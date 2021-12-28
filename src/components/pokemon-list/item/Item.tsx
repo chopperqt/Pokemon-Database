@@ -2,7 +2,7 @@ import React, { useEffect,  useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { SkeletonPokemonItem } from "src/components";
+import { SkeletonPokemonItem, Img } from "src/components";
 import { IStore } from "src/services/rootStore";
 import { fetchPokemon } from "src/api/pokemons";
 import { formatName } from "src/helpers/format";
@@ -45,7 +45,8 @@ const PokemonItem = ({ name }: IPokemonItem) => {
     return (
         <div className={styles.item}>
             <Link to={`/pokemon/${name}`}>
-                <img className={styles.image} src={img} alt={name} />
+                <Img className={styles.image} src={img} alt={name} />
+                {/* <img className={styles.image} src={img} alt={name} /> */}
             </Link>
             <Link to={`/pokemon/${name}`} className={styles.link}>
                 {formatName(name)}
