@@ -33,7 +33,11 @@ const PokemonItem = ({ name }: IPokemonItem) => {
     useEffect(() => {
         if (pokemon && !pokemon[name]) {
             handlePokemon()
+
+            return
         } 
+
+        setLoading(true)
     }, []);
 
     if (!loading) return <SkeletonPokemonItem />
