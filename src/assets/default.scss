@@ -1,3 +1,9 @@
+@import './typography.scss';
+
+* {
+    font-family: $text-regular;
+}
+
 .App {
     display: grid;
     justify-content: center;

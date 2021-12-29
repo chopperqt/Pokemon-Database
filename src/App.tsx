@@ -11,7 +11,7 @@ import logo from 'src/templates/logo.png'
 import { isScrolled } from 'src/helpers/scroll'
 
 
-import "./assets/default.css";
+import "./assets/default.scss";
 
 function App() {
     const [isBottom, setIsBottom] = useState<boolean>(false)
