@@ -1,0 +1,101 @@
+@import '../../assets/colors.scss';
+
+.chip {
+    border: 1px solid $color-black;
+    color: $color-white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    width: fit-content;
+    cursor: pointer;
+
+    &:global(.grass) {
+        background-color: $color-grass;
+        border: 1px solid $color-grass;
+    }
+    
+    &:global(.poison) {
+        background-color: $color-poison;
+        border: 1px solid $color-poison; 
+    }
+
+    &:global(.fire) {
+        background-color:$color-fire;
+        border: 1px solid $color-fire; 
+    }
+
+    &:global(.water) {
+        background-color: $color-water;
+        border: 1px solid $color-water;
+    }
+
+    &:global(.bug) {
+        background-color: $color-bug;
+        border: 1px solid $color-bug;
+    }
+
+    &:global(.flying) {
+        background-color: $color-flying;
+        border: 1px solid $color-flying;
+    }
+
+    &:global(.ground) {
+        background-color: $color-ground;
+        border: 1px solid $color-ground;
+    }
+
+    &:global(.fairy) {
+        background-color: $color-fairy;
+        border: 1px solid $color-fairy;
+    }
+
+    &:global(.ghost) {
+        background-color: $color-ghost;
+        border: 1px solid $color-ghost;
+    }
+
+    &:global(.normal) {
+        background-color: $color-normal;
+        border: 1px solid $color-normal;
+    }
+
+    &:global(.fighting) {
+        background-color: $color-fighting;
+        border: 1px solid $color-fighting;
+    }
+
+    &:global(.psychic) {
+        background-color: $color-psychic;
+        border: 1px solid $color-psychic;
+    }
+
+    &:global(.rock) {
+        background-color: $color-rock;
+        border: 1px solid $color-rock;
+    }
+
+    &:global(.electric) {
+        background-color: $color-electric;
+        border: 1px solid $color-electric;
+    }
+
+    &:global(.steel) {
+        background-color: $color-steel;
+        border: 1px solid $color-steel;
+    }
+
+    &:global(.ice) {
+        background-color: $color-ice;
+        border: 1px solid $color-ice;
+    }
+
+    &:global(.dragon) {
+        background-color: $color-dragon;
+        border: 1px solid $color-dragon;
+    }
+
+    &:global(.dark) {
+        background-color: $color-dark;
+        border: 1px solid $color-dark;
+    }
+
+}

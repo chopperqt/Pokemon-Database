@@ -1,4 +1,25 @@
 $text-regular: 'MontserratRegular';
+$text-semi: 'MontserratSemiBold';
+
+.text-size-sm {
+    font-size: 12px;
+}
+
+.text-size-md {
+    font-size: 14px;
+}
+
+.text-size-lg {
+    font-size: 20px;
+}
+
+.text-regular {
+    font-family: $text-regular;
+}
+
+.text-semi-bold {
+    font-family: $text-semi;
+}
 
 @font-face {
     font-family: 'MontserratRegular';
@@ -8,4 +29,14 @@ $text-regular: 'MontserratRegular';
          url('./fonts/MontserratRegular.woff') format('woff'),
          url('./fonts/MontserratRegular.ttf') format('truetype'),
          url('./fonts/MontserratRegular.svg#MontserratRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('fonts/MontserratSemiBold.eot');
+    src: url('fonts/MontserratSemiBold.eot') format('embedded-opentype'),
+         url('fonts/MontserratSemiBold.woff2') format('woff2'),
+         url('fonts/MontserratSemiBold.woff') format('woff'),
+         url('fonts/MontserratSemiBold.ttf') format('truetype'),
+         url('fonts/MontserratSemiBold.svg#MontserratSemiBold') format('svg');
 }

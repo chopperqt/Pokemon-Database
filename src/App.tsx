@@ -12,6 +12,7 @@ import { isScrolled } from 'src/helpers/scroll'
 
 
 import "./assets/default.scss";
+import './assets/typography.scss'
 
 function App() {
     const [isBottom, setIsBottom] = useState<boolean>(false)
