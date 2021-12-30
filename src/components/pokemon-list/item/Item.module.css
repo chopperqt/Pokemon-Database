@@ -1,3 +1,5 @@
+@import 'src/assets/colors.scss';
+
 .item { 
     text-align: center;
     transition: box-shadow 0.2s;
@@ -26,6 +28,7 @@
     width: 100%;
     height: auto;
     min-height: 168px;
+    background: $color-white;
 }
 
 .link {

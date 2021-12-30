@@ -1,30 +1,69 @@
 @import 'src/assets/media.scss';
 
 .layout {
-    margin: 30px 0 30px 0;
+    margin: 15px 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 15px;
     row-gap: 15px;
 }
 
-@media screen and (max-width: $media-phone) {
+@media screen and (max-width: $media-desktop) {
     .layout {
-        grid-template-columns: 1fr;
+        margin-bottom: 0;
+        grid-template-columns: repeat(4, 1fr);
+        height: 135px;
+        overflow: hidden;
     }
 
     .wrap {
-        display: none;
+        height: 135px !important;
 
-        &:last-child {
-            display: grid;
+        .active {
+            height: 135px !important;
+        }
+    }
+}
+ 
+@media screen and (max-width: $media-table) { 
+    .layout {
+        margin-bottom: 0;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+        height: 150px;
+    }
+
+    .wrap {
+        height: 150px !important;
+
+        div {
+            height: 150px !important;
+        }
+    }
+}
+
+@media screen and (max-width: $media-phone) {
+    .layout {
+        width: 100%;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    .wrap {
+        width: 80% !important;
+        height: 80px !important;
+
+        .active {
+            height:  80px !important;
         }
     }
 }
 
 .wrap {
     position: relative;
-    height: 60px !important;
+    height: 60px;
     width: 100%;
     background-color: rgb(211, 211, 211);
     z-index: 44;
