@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PokemonItem from "./item/Item";
 import { SkeletonPokemonMore } from "src/components";
 
-import styles from "./PokemonList.module.css";
+import styles from "./PokemonList.module.scss";
 
 const PokemonList = ({
     pokemonList,

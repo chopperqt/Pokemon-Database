@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SearchItem from './search-item/SearchItem'
 import Empty from './empty/Empty'
 
-import styles from './Search.module.css'
+import styles from './Search.module.scss'
 
 const Search = () => {
     const [searchValue, setSearchValue] = useState<string>("");
