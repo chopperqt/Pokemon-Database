@@ -8,7 +8,7 @@ import { fetchPokemon } from "src/api/pokemons";
 import { formatName } from "src/helpers/format";
 import { checkRequest } from "src/helpers/request";
 
-import styles from "./Item.module.css";
+import styles from "./Item.module.scss";
 
 interface IPokemonType {
     slot: number;

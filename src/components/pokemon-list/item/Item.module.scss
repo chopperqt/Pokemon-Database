@@ -1,4 +1,5 @@
 @import 'src/assets/colors.scss';
+@import 'src/assets/elements.scss';
 
 .item { 
     text-align: center;
@@ -7,7 +8,7 @@
     box-sizing: border-box;
     border-radius: 12px;
     min-height: 213px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 8%);
+    box-shadow: $box-shadow-default;
 }
 
 .types {
@@ -21,7 +22,7 @@
 }
 
 .item:hover {
-    box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+    box-shadow: $box-shadow-hover;
 }
 
 .image {
