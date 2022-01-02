@@ -4,10 +4,10 @@ import {
     Route,
 } from 'react-router-dom'
 
-import { Search } from "./components";
+import { Search, Logo } from "./components";
 import Home from "src/pages/Home";
 import Pokemon from 'src/pages/pokemon/Pokemon'
-import logo from 'src/templates/logo.png'
+
 import { isScrolled } from 'src/helpers/scroll'
 
 
@@ -25,9 +25,7 @@ function App() {
     return (
         <div className="App">
             <div className="container">
-                <div className="logo">
-                    <img src={logo} alt={logo} />
-                </div>
+                <Logo />
                 <Search />
 				<Routes>
 					<Route path="/" element={<Home hasScrollBottom={isBottom} />} />

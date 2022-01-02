@@ -17,7 +17,7 @@ const Search = () => {
                 className={styles.field}
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Give me pokemon name:)"
+                placeholder="Pokemon name"
                 data-testid="search-input"
             />
             {searchValue.length >= 4 && (

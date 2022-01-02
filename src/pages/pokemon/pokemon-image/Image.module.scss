@@ -1,5 +1,11 @@
+@import 'src/assets/media.scss';
+
+
 .image {
     max-width: 350px;
     max-height: 370px;
     height: fit-content;
+}
+
+@media screen and (min-width: $media-desktop) {
 }
