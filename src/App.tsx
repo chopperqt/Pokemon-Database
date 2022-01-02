@@ -6,7 +6,7 @@ import {
 
 import { Search } from "./components";
 import Home from "src/pages/Home";
-import Pokemon from 'src/pages/Pokemon'
+import Pokemon from 'src/pages/pokemon/Pokemon'
 import logo from 'src/templates/logo.png'
 import { isScrolled } from 'src/helpers/scroll'
 

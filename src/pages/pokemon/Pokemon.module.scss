@@ -1,0 +1,7 @@
+.pokemon { 
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    column-gap: 15px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
