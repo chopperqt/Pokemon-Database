@@ -4,6 +4,7 @@ import Loader from './loader/Loader'
 import Img from './img/Img'
 import Chip from './chip/Chip'
 import Section from './section/Section'
+import ProgressBar from './progress-bar/ProgressBar'
 
 import SkeletonPokemonItem from './skeleton/skeleton-pokemon-item/SkeletonPokemonItem'
 import SkeletonPokemonMore from './skeleton/skeleton-pokemon-more/SkeletonPokemonMore'
@@ -16,5 +17,6 @@ export {
     Loader,
     Chip,
     Section,
+    ProgressBar,
     Img,
 }
