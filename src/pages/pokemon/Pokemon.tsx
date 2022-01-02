@@ -6,6 +6,7 @@ import { fetchPokemon } from "src/api/pokemons";
 import { IStore } from "src/services/rootStore";
 import { Section, ProgressBar } from "src/components";
 import Image from "./pokemon-image/Image";
+import PokemonInfo from "./pokemon-info/PokemonInfo";
 
 import styles from "./Pokemon.module.scss";
 
@@ -17,7 +18,6 @@ interface IStat {
 }
 
 const BASE_STAT = "Base Stats:"
-const BASE_INFO = 'Base info:'
  
 const Pokemon = () => {
     const pokemonData = useSelector((store: IStore) => store.pokemons.pokemons);
@@ -29,6 +29,17 @@ const Pokemon = () => {
         pokemonData[pokemonName].sprites!.other["official-artwork"]
             .front_default;
     const stats = pokemonName && pokemonData[pokemonName].stats;
+    const id = pokemonName && pokemonData[pokemonName].id
+    const order = pokemonName && pokemonData[pokemonName].order
+    const baseExperience = pokemonName && pokemonData[pokemonName].base_experience 
+    const name = pokemonName && pokemonData[pokemonName].name 
+    const isDefault = pokemonName && pokemonData[pokemonName].is_default
+    const weight = pokemonName && pokemonData[pokemonName].weight
+    const height = pokemonName && pokemonData[pokemonName].height
+    const types = pokemonName && pokemonData[pokemonName].types
+    const abilities = pokemonName && pokemonData[pokemonName].abilities
+    const forms = pokemonName && pokemonData[pokemonName].forms
+
     useEffect(() => {
         if (!hasPokemon) {
             if (pokemonName) fetchPokemon(pokemonName);
@@ -40,9 +51,18 @@ const Pokemon = () => {
             {hasPokemon && <Image url={art} alt={pokemonName} />}
             <div>
                 <Section>
-                    <div>
-                        <h3>{BASE_INFO}</h3>
-                    </div>
+                    <PokemonInfo
+                        height={height}
+                        weight={weight}
+                        isDefault={isDefault}
+                        baseExperience={baseExperience}
+                        id={id}
+                        name={name}
+                        order={order}
+                        types={types}
+                        abilities={abilities}
+                        forms={forms}
+                    />
                 </Section>
                 {hasPokemon && (
                     <Section>
