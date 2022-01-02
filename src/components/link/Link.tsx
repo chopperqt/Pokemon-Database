@@ -1,15 +1,28 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import styles from './Link.module.scss'
+import styles from "./Link.module.scss";
 
 interface ILink {
-    to: string
-    text: string
+    to: string;
+    text: string;
+    type?: "route" | "href";
 }
 
-const Link = ({to, text}: ILink) => (
-    <NavLink className={styles.link} to={to} >{text}</NavLink>
-)
+const Link = ({ to, text, type }: ILink) => {
+    if (type === "href") {
+        return (
+            <a target="_blank" href={to} rel="noreferrer">
+                {text}
+            </a>
+        );
+    }
 
-export default Link
+    return (
+        <NavLink className={styles.link} to={to}>
+            {text}
+        </NavLink>
+    );
+};
+
+export default Link;

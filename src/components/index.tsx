@@ -6,6 +6,7 @@ import Chip from './chip/Chip'
 import Section from './section/Section'
 import ProgressBar from './progress-bar/ProgressBar'
 import Link from './link/Link'
+import Footer from './footer/Footer'
 
 import SkeletonPokemonItem from './skeleton/skeleton-pokemon-item/SkeletonPokemonItem'
 import SkeletonPokemonMore from './skeleton/skeleton-pokemon-more/SkeletonPokemonMore'
@@ -20,5 +21,6 @@ export {
     Section,
     ProgressBar,
     Link,
+    Footer,
     Img,
 }
