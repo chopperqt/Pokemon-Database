@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 import { store } from '../index'
 import { methods } from '../services/rootStore'

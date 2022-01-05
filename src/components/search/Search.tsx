@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import cx from 'classnames'
 
 import SearchItem from "./search-item/SearchItem";
@@ -13,7 +13,6 @@ import styles from "./Search.module.scss";
 const DEFAULT_SEARCH_LENGTH = 4;
 
 const Search = () => {
-    const dispatch = useDispatch();
     const popupRef = useRef(null)
     const layoutRef = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)

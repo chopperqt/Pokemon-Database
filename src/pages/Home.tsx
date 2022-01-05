@@ -34,7 +34,6 @@ const Home = ({ hasScrollBottom }: IHome) => {
             if (
                 typeof loading.fetchPokemonList === "boolean" 
                 && loading.fetchPokemonList
-                // && 
             ) {
                 const handleOffset =  offset + LIMIT_PER_PAGE
                 const callFetchPokemonList =  _.throttle(() => {
