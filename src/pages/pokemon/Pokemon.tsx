@@ -46,12 +46,10 @@ const Pokemon = () => {
         if (!hasPokemon) {
             if (pokemonName) fetchPokemon(pokemonName);
         }
-    }, []);
+    }, [pokemonName]);
 
     if (!hasPokemon) {
-        console.log('test', hasPokemon)
-
-        return <Loader />
+        return <Loader className={styles.loader} />
     }
 
     return (
@@ -59,7 +57,7 @@ const Pokemon = () => {
             <div className={styles.wrap}>
                 <div className={styles.pokemon}>
                     {hasPokemon && <Image url={art} alt={pokemonName} />}
-                    <Section>
+                    <Section className={styles.section}>
                         <PokemonInfo
                             height={height}
                             weight={weight}
@@ -74,14 +72,15 @@ const Pokemon = () => {
                         />
                     </Section>
                 </div>
-                <div>
+                <div className={styles.info}>
                     {hasPokemon && (
                         <Section>
                             <div>
                                 <h3>{BASE_STAT}</h3>
                                 <div className={styles.stats}>
-                                    {stats.map((stat: IStat) => (
+                                    {stats.map((stat: IStat, index: number) => (
                                         <ProgressBar
+                                            key={index}
                                             name={stat.stat.name}
                                             stat={stat.base_stat}
                                         />

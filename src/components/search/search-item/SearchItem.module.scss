@@ -1,0 +1,20 @@
+.item {
+    display: flex;
+    column-gap: 15px;
+}
+
+.image {
+    height: 130px;
+}
+
+.info { 
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.types { 
+    display: flex;
+    column-gap: 5px;
+}

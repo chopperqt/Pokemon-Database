@@ -7,9 +7,15 @@ interface ILink {
     to: string;
     text: string;
     type?: "route" | "href";
+    click?: () => void
 }
 
-const Link = ({ to, text, type }: ILink) => {
+const Link = ({ 
+    to, 
+    text, 
+    type,
+    click
+}: ILink) => {
     if (type === "href") {
         return (
             <a target="_blank" href={to} rel="noreferrer">
@@ -19,7 +25,11 @@ const Link = ({ to, text, type }: ILink) => {
     }
 
     return (
-        <NavLink className={styles.link} to={to}>
+        <NavLink 
+            className={styles.link} 
+            to={to}
+            onClick={click}
+        >
             {text}
         </NavLink>
     );

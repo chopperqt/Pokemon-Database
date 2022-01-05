@@ -1,3 +1,5 @@
+@import 'src/assets/media.scss';
+
 .wrap { 
     margin-bottom: 60px;
 }
@@ -14,3 +16,52 @@
     display: grid;
     row-gap: 5px;
 }
+
+.section { 
+    width: auto;
+}
+
+.info { 
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.loader {
+    left: 0;
+}
+
+@media screen and (max-width: $media-table) {
+    .pokemon {
+        width: 100%;
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: $media-phone) { 
+    .wrap  {
+        display: grid;
+        justify-items: center;
+    }
+
+    .pokemon { 
+        width: 80%;
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .info {
+        width: 80%;
+    }
+}
+

@@ -61,20 +61,27 @@ const PokemonInfo = ({
                 <div>ID: {id}</div>
                 <div>Order: {order}</div>
                 <div>Name: {formatName(name)}</div>
-                <div className={styles.infoText}>Type: {types.map(({type}) => (
-                    <Chip color={type.name} text={formatName(type.name)} />
+                <div className={styles.infoText}>Type: {types.map(({type}, index: number) => (
+                    <Chip 
+                        key={index}
+                        color={type.name} 
+                        text={formatName(type.name)} 
+                    />
                 ))}</div>
                 <div>Base experience: {baseExperience}</div>
                 <div className={styles.infoText}>Abilities: {abilities.map((ability,index) => {
                     const isHidden = ability.is_hidden
 
                     return (
-                        <div>{formatName(ability.ability.name)}{isHidden && '(Hidden)'} {abilities.length !== index + 1 && ','}</div>
+                        <div key={index}>{formatName(ability.ability.name)}{isHidden && '(Hidden)'} {abilities.length !== index + 1 && ','}</div>
                     )
                 })}</div>
                 <div className={styles.infoText}>Forms: {forms.map(({name}, index) => (
-                    <div>
-                        <Link to={`/pokemon/${name}`} text={formatName(name)} />
+                    <div key={index}>
+                        <Link 
+                            to={`/pokemon/${name}`} 
+                            text={formatName(name)} 
+                        />
                         {forms.length !== index + 1 && ','}
                     </div>
                 ))}</div>

@@ -55,7 +55,11 @@ const PokemonItem = ({ name }: IPokemonItem) => {
             <div className={styles.types}>
                 {types &&
                     types.map(({ type }: IPokemonType, index: number) => (
-                        <Chip key={index} text={formatName(type.name)} color={type.name} />
+                        <Chip 
+                            key={index} 
+                            text={formatName(type.name)} 
+                            color={type.name} 
+                        />
                     ))}
             </div>
             <Link to={`/pokemon/${name}`}>

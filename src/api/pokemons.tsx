@@ -36,7 +36,9 @@ async function fetchPokemon(name: string) {
 }
 
 async function searchPokemon(name: string) {
-    const response = await getRequest(`${POKEMON}/${name}`, searchPokemon.name)
+    const formatName = name.toLowerCase()
+
+    const response = await getRequest(`${POKEMON}/${formatName}`, searchPokemon.name)
 
     if (checkRequest(response)) {
         store.dispatch(pokemonSearch(response.data))

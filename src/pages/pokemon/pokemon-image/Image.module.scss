@@ -7,5 +7,17 @@
     height: fit-content;
 }
 
-@media screen and (min-width: $media-desktop) {
+@media screen and (max-width: $media-phone) {
+    .image {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: $media-table) {
+    .image {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: $media-desktop) {
 }

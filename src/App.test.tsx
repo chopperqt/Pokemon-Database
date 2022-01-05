@@ -66,8 +66,6 @@ describe('Testing <Search> component' , () => {
 
 		const response = await fetch('/greeting')
 
-		console.log(response)
-
 		expect(screen.getByTestId('search-popup-no-item')).toBeInTheDocument()
 	})
 
