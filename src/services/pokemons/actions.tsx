@@ -1,7 +1,9 @@
 export const actions = {
     POKEMON_LIST: 'POKEMON_LIST',
     POKEMON_LIST_MORE: 'POKEMON_LIST_MORE',
-    POKEMON: 'POKEMON'
+    POKEMON: 'POKEMON',
+    POKEMON_SEARCH: 'POKEMON_SEARCH',
+    POKEMON_SEARCH_CLEAR: 'POKEMON_SEARCH_CLEAR',
 }
 
 export const methods = {
@@ -21,6 +23,15 @@ export const methods = {
                 name,
                 data: pokemon
             }
+        }
+    },
+    pokemonSearch<T>(pokemon: T) {
+        return { type: actions.POKEMON_SEARCH, payload: pokemon }
+    },
+    pokemonSearchClear() {
+        return { 
+            type: actions.POKEMON_SEARCH_CLEAR ,
+            payload: {}
         }
     }
 }

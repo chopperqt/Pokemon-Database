@@ -23,6 +23,9 @@ export interface IStore {
         pokemons: {
             [key: string]: any
         }
+        search: {
+            [key: string]: any
+        }
     },
     notifications: {
         loading: {

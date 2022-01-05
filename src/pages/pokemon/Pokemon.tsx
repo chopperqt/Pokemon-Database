@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { fetchPokemon } from "src/api/pokemons";
 import { IStore } from "src/services/rootStore";
-import { Section, ProgressBar, Footer } from "src/components";
+import { Section, ProgressBar, Footer, Loader } from "src/components";
 import Image from "./pokemon-image/Image";
 import PokemonInfo from "./pokemon-info/PokemonInfo";
 
@@ -23,29 +23,36 @@ const Pokemon = () => {
     const pokemonData = useSelector((store: IStore) => store.pokemons.pokemons);
     const params = useParams();
     const pokemonName = params!.pokemon;
-    const hasPokemon = pokemonName && pokemonData[pokemonName];
+    const hasPokemon = pokemonName && pokemonData[pokemonName]
+
     const art =
-        pokemonName &&
+    hasPokemon &&
         pokemonData[pokemonName].sprites!.other["official-artwork"]
             .front_default;
-    const stats = pokemonName && pokemonData[pokemonName].stats;
-    const id = pokemonName && pokemonData[pokemonName].id;
-    const order = pokemonName && pokemonData[pokemonName].order;
+    const stats = hasPokemon && pokemonData[pokemonName].stats;
+    const id = hasPokemon && pokemonData[pokemonName].id;
+    const order = hasPokemon && pokemonData[pokemonName].order;
     const baseExperience =
-        pokemonName && pokemonData[pokemonName].base_experience;
-    const name = pokemonName && pokemonData[pokemonName].name;
-    const isDefault = pokemonName && pokemonData[pokemonName].is_default;
-    const weight = pokemonName && pokemonData[pokemonName].weight;
-    const height = pokemonName && pokemonData[pokemonName].height;
-    const types = pokemonName && pokemonData[pokemonName].types;
-    const abilities = pokemonName && pokemonData[pokemonName].abilities;
-    const forms = pokemonName && pokemonData[pokemonName].forms;
+    hasPokemon && pokemonData[pokemonName].base_experience;
+    const name = hasPokemon && pokemonData[pokemonName].name;
+    const isDefault = hasPokemon && pokemonData[pokemonName].is_default;
+    const weight = hasPokemon && pokemonData[pokemonName].weight;
+    const height = hasPokemon && pokemonData[pokemonName].height;
+    const types = hasPokemon && pokemonData[pokemonName].types;
+    const abilities = hasPokemon && pokemonData[pokemonName].abilities;
+    const forms = hasPokemon && pokemonData[pokemonName].forms;
 
     useEffect(() => {
         if (!hasPokemon) {
             if (pokemonName) fetchPokemon(pokemonName);
         }
     }, []);
+
+    if (!hasPokemon) {
+        console.log('test', hasPokemon)
+
+        return <Loader />
+    }
 
     return (
         <>

@@ -1,9 +1,14 @@
 import React from "react";
+import cx from 'classnames'
 
 import "./Loader.css";
 
-const Loader = () => (
-    <div className="loader-layout">
+const Loader = ({
+    className
+}: {
+    className?: string,
+}) => (
+    <div className={cx("loader-layout", className)}>
         <div className="lds-facebook">
             <div></div>
             <div></div>

@@ -10,13 +10,11 @@ import Pokemon from 'src/pages/pokemon/Pokemon'
 
 import { isScrolled } from 'src/helpers/scroll'
 
-
 import "./assets/default.scss";
 import './assets/typography.scss'
 
 function App() {
     const [isBottom, setIsBottom] = useState<boolean>(false)
-
 
     window.addEventListener('scroll' , () => {
         setIsBottom(isScrolled('bottom'))  
@@ -28,7 +26,8 @@ function App() {
                 <Logo />
                 <Search />
 				<Routes>
-					<Route path="/" element={<Home hasScrollBottom={isBottom} />} />
+
+					<Route index={false} path="/" element={<Home hasScrollBottom={isBottom} />} />
                     <Route path="/pokemon/:pokemon" element={<Pokemon />} />
 				</Routes>
                 

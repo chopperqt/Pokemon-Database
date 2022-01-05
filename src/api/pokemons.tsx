@@ -10,6 +10,8 @@ const {
     pokemonList,
     pokemonListMore,
     pokemon,
+    pokemonSearch,
+    pokemonSearchClear
  } = pokemonMethods
 
 async function fetchPokemonList(limit: number, offset: number, more?: boolean) {
@@ -33,7 +35,20 @@ async function fetchPokemon(name: string) {
     return response
 }
 
+async function searchPokemon(name: string) {
+    const response = await getRequest(`${POKEMON}/${name}`, searchPokemon.name)
+
+    if (checkRequest(response)) {
+        store.dispatch(pokemonSearch(response.data))
+
+        return
+    }
+
+    return store.dispatch(pokemonSearchClear())
+}
+
 export {
     fetchPokemonList,
     fetchPokemon,
+    searchPokemon,
 }
