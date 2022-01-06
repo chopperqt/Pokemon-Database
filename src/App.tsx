@@ -4,7 +4,7 @@ import {
     Route,
 } from 'react-router-dom'
 
-import { Search, Logo } from "./components";
+import { Search, Logo, NotFound } from "./components";
 import Home from "src/pages/Home";
 import Pokemon from 'src/pages/pokemon/Pokemon'
 
@@ -32,11 +32,9 @@ function App() {
                 <Logo />
                 <Search />
 				<Routes>
-
 					<Route index={false} path="/" element={<Home hasScrollBottom={isBottom} />} />
                     <Route path="/pokemon/:pokemon" element={<Pokemon />} />
 				</Routes>
-                
             </div>
         </div>
     );

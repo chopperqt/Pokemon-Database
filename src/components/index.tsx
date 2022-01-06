@@ -7,6 +7,7 @@ import Section from './section/Section'
 import ProgressBar from './progress-bar/ProgressBar'
 import Link from './link/Link'
 import Logo from './logo/Logo'
+import NotFound from './not-found/NotFound'
 import Footer from './footer/Footer'
 
 import SkeletonPokemonItem from './skeleton/skeleton-pokemon-item/SkeletonPokemonItem'
@@ -24,5 +25,6 @@ export {
     Link,
     Footer,
     Logo,
+    NotFound,
     Img,
 }

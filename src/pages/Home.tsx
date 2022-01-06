@@ -9,6 +9,7 @@ import { IStore } from "src/services/rootStore";
 const LIMIT = 20
 const LIMIT_PER_PAGE = 10
 const TIMER = 400
+const TITLE = 'Pokemon Database'
 
 interface IHome {
     hasScrollBottom: boolean;
@@ -22,6 +23,7 @@ const Home = ({ hasScrollBottom }: IHome) => {
     const [offset, setOffset] = useState<number>(0);
 
     useEffect(() => {
+        document.title = TITLE 
         document.documentElement.scrollTop = 0;
 
         fetchPokemonList(LIMIT, offset);
