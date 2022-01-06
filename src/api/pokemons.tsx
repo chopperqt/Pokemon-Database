@@ -15,7 +15,7 @@ const {
  } = pokemonMethods
 
 async function fetchPokemonList(limit: number, offset: number, more?: boolean) {
-    const response = await getRequest(`${POKEMON}?limit=${limit}&offset=${offset}`, fetchPokemonList.name)
+    const response = await getRequest(`${POKEMON}?limit=${limit}&offset=${offset}`, 'fetchPokemonList')
     
     if (checkRequest(response)) {
         if (more) {
@@ -26,7 +26,7 @@ async function fetchPokemonList(limit: number, offset: number, more?: boolean) {
 }
 
 async function fetchPokemon(name: string) {
-    const response = await getRequest(`${POKEMON}/${name}`, fetchPokemon.name)
+    const response = await getRequest(`${POKEMON}/${name}`, 'fetchPokemon')
 
     if (checkRequest(response)) {
         store.dispatch(pokemon(response.data, name))
@@ -38,7 +38,7 @@ async function fetchPokemon(name: string) {
 async function searchPokemon(name: string) {
     const formatName = name.toLowerCase()
 
-    const response = await getRequest(`${POKEMON}/${formatName}`, searchPokemon.name)
+    const response = await getRequest(`${POKEMON}/${formatName}`, 'searchPokemon')
 
     if (checkRequest(response)) {
         store.dispatch(pokemonSearch(response.data))

@@ -23,17 +23,17 @@ const Search = () => {
     const pokemon = useSelector((store: IStore) => store.pokemons.search);
     const hasLoading = loading.searchPokemon;
 
-
     const handleClickLink = ( ) => {
         setSearchValue('')
         setPopup(false)
     }
     
     const handleClickOver = (event:any) => {
-        const hasPopup = searchValue.length >= DEFAULT_SEARCH_LENGTH
+
+        console.log('debug 1')
 
         if (layoutRef.current && event.target) {
-            if (event.target!.closest(`.search`) && hasPopup )  {
+            if (event.target!.closest(`.search`) && inputRef.current!.value!.length >= DEFAULT_SEARCH_LENGTH )  {
                 return setPopup(true)
             } 
 

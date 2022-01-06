@@ -30,7 +30,6 @@ const Home = ({ hasScrollBottom }: IHome) => {
 
     useEffect(() => {
         if (hasScrollBottom) {
-
             if (
                 typeof loading.fetchPokemonList === "boolean" 
                 && loading.fetchPokemonList

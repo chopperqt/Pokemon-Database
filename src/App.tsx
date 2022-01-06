@@ -20,9 +20,6 @@ function App() {
 
     useEffect(() => {
         document.addEventListener('scroll' , () => {
-            console.log('Scrolling')
-
-
             setIsBottom(isScrolled('bottom'))
         })
 
