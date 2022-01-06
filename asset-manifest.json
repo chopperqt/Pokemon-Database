@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/pokemon-patabase/static/css/main.11035c46.css",
-    "main.js": "/pokemon-patabase/static/js/main.e6175cd6.js",
-    "static/media/MontserratRegular.svg": "/pokemon-patabase/static/media/MontserratRegular.ca7c9761904dcacbca3f.svg",
-    "static/media/MontserratSemiBold.svg": "/pokemon-patabase/static/media/MontserratSemiBold.c8d7d411ed44433d67c1.svg",
-    "static/media/MontserratRegular.eot": "/pokemon-patabase/static/media/MontserratRegular.85f511d604566bb927fa.eot",
-    "static/media/MontserratRegular.ttf": "/pokemon-patabase/static/media/MontserratRegular.5f824f6103e6e7c198cb.ttf",
-    "static/media/MontserratSemiBold.eot": "/pokemon-patabase/static/media/MontserratSemiBold.baffb3826e5242437068.eot",
-    "static/media/MontserratSemiBold.ttf": "/pokemon-patabase/static/media/MontserratSemiBold.fce9ddf7a811ccd07e87.ttf",
-    "static/media/logo.png": "/pokemon-patabase/static/media/logo.16d0ce56c0dd53b0a201.png",
-    "static/media/MontserratRegular.woff": "/pokemon-patabase/static/media/MontserratRegular.3730291f0721709ff078.woff",
-    "static/media/MontserratSemiBold.woff": "/pokemon-patabase/static/media/MontserratSemiBold.d3d57dfe612ee30ea63f.woff",
-    "static/media/MontserratRegular.woff2": "/pokemon-patabase/static/media/MontserratRegular.d9c9a032c59b08bf9fee.woff2",
-    "static/media/MontserratSemiBold.woff2": "/pokemon-patabase/static/media/MontserratSemiBold.fde01fe66224a5293ace.woff2",
-    "static/media/no-data.png": "/pokemon-patabase/static/media/no-data.2e587c4011d9cc0ea85d.png",
-    "index.html": "/pokemon-patabase/index.html",
-    "main.11035c46.css.map": "/pokemon-patabase/static/css/main.11035c46.css.map",
-    "main.e6175cd6.js.map": "/pokemon-patabase/static/js/main.e6175cd6.js.map"
+    "main.css": "/pokemon-database/static/css/main.ee6f9f35.css",
+    "main.js": "/pokemon-database/static/js/main.82259f7f.js",
+    "static/media/MontserratRegular.svg": "/pokemon-database/static/media/MontserratRegular.ca7c9761904dcacbca3f.svg",
+    "static/media/MontserratSemiBold.svg": "/pokemon-database/static/media/MontserratSemiBold.c8d7d411ed44433d67c1.svg",
+    "static/media/MontserratRegular.eot": "/pokemon-database/static/media/MontserratRegular.85f511d604566bb927fa.eot",
+    "static/media/MontserratRegular.ttf": "/pokemon-database/static/media/MontserratRegular.5f824f6103e6e7c198cb.ttf",
+    "static/media/MontserratSemiBold.eot": "/pokemon-database/static/media/MontserratSemiBold.baffb3826e5242437068.eot",
+    "static/media/MontserratSemiBold.ttf": "/pokemon-database/static/media/MontserratSemiBold.fce9ddf7a811ccd07e87.ttf",
+    "static/media/logo.png": "/pokemon-database/static/media/logo.16d0ce56c0dd53b0a201.png",
+    "static/media/MontserratRegular.woff": "/pokemon-database/static/media/MontserratRegular.3730291f0721709ff078.woff",
+    "static/media/MontserratSemiBold.woff": "/pokemon-database/static/media/MontserratSemiBold.d3d57dfe612ee30ea63f.woff",
+    "static/media/MontserratRegular.woff2": "/pokemon-database/static/media/MontserratRegular.d9c9a032c59b08bf9fee.woff2",
+    "static/media/MontserratSemiBold.woff2": "/pokemon-database/static/media/MontserratSemiBold.fde01fe66224a5293ace.woff2",
+    "static/media/no-data.png": "/pokemon-database/static/media/no-data.2e587c4011d9cc0ea85d.png",
+    "index.html": "/pokemon-database/index.html",
+    "main.ee6f9f35.css.map": "/pokemon-database/static/css/main.ee6f9f35.css.map",
+    "main.82259f7f.js.map": "/pokemon-database/static/js/main.82259f7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.11035c46.css",
-    "static/js/main.e6175cd6.js"
+    "static/css/main.ee6f9f35.css",
+    "static/js/main.82259f7f.js"
   ]
 }
