@@ -1,7 +1,7 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { createStore, compose, applyMiddleware } from "redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
@@ -28,11 +28,11 @@ export const store = createStore(
 ReactDOM.render(
 
         <Provider store={store}>
-            <BrowserRouter>
+            <HashRouter>
                 <StrictMode>
                     <App />
                 </StrictMode>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
 ,
     document.getElementById("root")
