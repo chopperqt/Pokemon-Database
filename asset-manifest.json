@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pokemon-patabase/static/css/main.11035c46.css",
-    "main.js": "/pokemon-patabase/static/js/main.25b3c420.js",
+    "main.js": "/pokemon-patabase/static/js/main.e6175cd6.js",
     "static/media/MontserratRegular.svg": "/pokemon-patabase/static/media/MontserratRegular.ca7c9761904dcacbca3f.svg",
     "static/media/MontserratSemiBold.svg": "/pokemon-patabase/static/media/MontserratSemiBold.c8d7d411ed44433d67c1.svg",
     "static/media/MontserratRegular.eot": "/pokemon-patabase/static/media/MontserratRegular.85f511d604566bb927fa.eot",
@@ -16,10 +16,10 @@
     "static/media/no-data.png": "/pokemon-patabase/static/media/no-data.2e587c4011d9cc0ea85d.png",
     "index.html": "/pokemon-patabase/index.html",
     "main.11035c46.css.map": "/pokemon-patabase/static/css/main.11035c46.css.map",
-    "main.25b3c420.js.map": "/pokemon-patabase/static/js/main.25b3c420.js.map"
+    "main.e6175cd6.js.map": "/pokemon-patabase/static/js/main.e6175cd6.js.map"
   },
   "entrypoints": [
     "static/css/main.11035c46.css",
-    "static/js/main.25b3c420.js"
+    "static/js/main.e6175cd6.js"
   ]
 }
