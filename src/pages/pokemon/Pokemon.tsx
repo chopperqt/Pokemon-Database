@@ -7,8 +7,10 @@ import { IStore } from "src/services/rootStore";
 import { Section, ProgressBar, Footer, Loader } from "src/components";
 import Image from "./pokemon-image/Image";
 import PokemonInfo from "./pokemon-info/PokemonInfo";
+import { formatName } from "src/helpers/format";
 
 import styles from "./Pokemon.module.scss";
+
 
 interface IStat {
     base_stat: number;
@@ -24,7 +26,6 @@ const Pokemon = () => {
     const params = useParams();
     const pokemonName = params!.pokemon;
     const hasPokemon = pokemonName && pokemonData[pokemonName]
-
     const art =
     hasPokemon &&
         pokemonData[pokemonName].sprites!.other["official-artwork"]
@@ -42,7 +43,13 @@ const Pokemon = () => {
     const abilities = hasPokemon && pokemonData[pokemonName].abilities;
     const forms = hasPokemon && pokemonData[pokemonName].forms;
 
+
+
     useEffect(() => {
+        if (pokemonName) { 
+            document.title = formatName(pokemonName)
+        }
+
         if (!hasPokemon) {
             if (pokemonName) fetchPokemon(pokemonName);
         }
