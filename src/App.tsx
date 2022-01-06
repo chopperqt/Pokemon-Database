@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Routes,
     Route,
@@ -16,9 +16,13 @@ import './assets/typography.scss'
 function App() {
     const [isBottom, setIsBottom] = useState<boolean>(false)
 
-    window.addEventListener('scroll' , () => {
-        setIsBottom(isScrolled('bottom'))  
-    })
+    
+
+    useEffect(() => {
+        document.addEventListener('scroll' , () => setIsBottom(isScrolled('bottom')))
+
+        return () => document.removeEventListener('scroll',  () => setIsBottom(isScrolled('bottom')) )
+    }, [])
 
     return (
         <div className="App">
