@@ -18,13 +18,6 @@ export const store = createStore(
     composeEnhancers(applyMiddleware(thunk))
 );
 
-// ReactDOM.render((
-//     <StrictMode>
-//         <App />
-//     </StrictMode>),
-//     document.getElementById('root')
-// )
-
 ReactDOM.render(
 
         <Provider store={store}>

@@ -22,7 +22,7 @@ const Search = () => {
     const loading = useSelector((store: IStore) => store.notifications.loading);
     const pokemon = useSelector((store: IStore) => store.pokemons.search);
     const hasLoading = loading.searchPokemon;
-    const hasPopup = searchValue.length >= DEFAULT_SEARCH_LENGTH
+
 
     const handleClickLink = ( ) => {
         setSearchValue('')
@@ -30,6 +30,8 @@ const Search = () => {
     }
     
     const handleClickOver = (event:any) => {
+        const hasPopup = searchValue.length >= DEFAULT_SEARCH_LENGTH
+
         if (layoutRef.current && event.target) {
             if (event.target!.closest(`.search`) && hasPopup )  {
                 return setPopup(true)
@@ -40,12 +42,16 @@ const Search = () => {
     }
 
     const handleFocusSearch = () => {
+        const hasPopup = searchValue.length >= DEFAULT_SEARCH_LENGTH
+
         if (hasPopup) {
             setPopup(true)
         }
     }
 
     useEffect(() => {
+        const hasPopup = searchValue.length >= DEFAULT_SEARCH_LENGTH
+
         if (hasPopup) {
             setPopup(true);
             searchPokemon(searchValue);
@@ -69,10 +75,6 @@ const Search = () => {
         
         if (inputRef.current) {
             inputRef.current.addEventListener('click', handleFocusSearch)
-        }
-
-        return () => {
-            window.removeEventListener('click', handleClickOver)
         }
     }, [])
 
